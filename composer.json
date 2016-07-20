@@ -1,0 +1,18 @@
+{
+    "description": "Activate content-dimensions transparent for the user.",
+    "type": "neos-package",
+    "name": "sitegeist/bordeland",
+    "require": {
+        "typo3/neos": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Sitegeist\\Bordeland": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Sitegeist.Bordeland"
+        }
+    }
+}
