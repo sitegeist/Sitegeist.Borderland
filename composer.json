@@ -1,7 +1,7 @@
 {
     "description": "Activate content-dimensions transparent for the user.",
     "type": "neos-package",
-    "name": "sitegeist/bordeland",
+    "name": "sitegeist/borderland",
     "require": {
         "typo3/neos": "*"
     },
