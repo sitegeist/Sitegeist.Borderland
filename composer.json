@@ -1,7 +1,15 @@
 {
-    "description": "Activate content-dimensions transparent for the user.",
+    "description": "Activate content-dimensions with triggers transparent for the user.",
     "type": "neos-package",
     "name": "sitegeist/borderland",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Martin Ficzel",
+            "email": "ficzel@sitegeist.de",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "typo3/neos": "*"
     },
