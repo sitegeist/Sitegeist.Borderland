@@ -1,0 +1,56 @@
+Sitegeist:
+  Borderland:
+
+    # configuration for the cookie that stores the active presetKeys
+    cookie:
+      name: 'sitegeist-borderland'
+      expires: 0
+      maximumAge: null
+      domain: null
+      path: '/'
+      secure: false
+      httpOnly: true
+
+    # define the trigger to detect a presetKey and store the key in the session
+    # presetKeys are grouped and only one key of a group can be active at once
+    triggers: []
+
+#    triggers:
+#      # this triggers get activated via url paramerte
+#      urlParameter:
+#        '__parameter_name__':
+#          '__parameter_valuze_1__':
+#            group: example
+#            key: foo
+#          '__parameter_valuze_2__':
+#            group: example
+#            key: bar
+#
+    # groups of presets only one preset of each group can be active at a specific time but
+    # different groups can handle different presets or dimensions
+    presetGroups: []
+
+#    # PresetGroups describe the different
+#    presetGroups:
+#      example:
+#        'foo':
+#          displayDimensions: {example: 'foo'}
+#          linkDimensions: {example: 'none'}
+#        'bar':
+#          displayDimensions: {example: 'bar'}
+#          linkDimensions: {example: 'none'}
+
+TYPO3:
+  Flow:
+    http:
+      chain:
+        'preprocess':
+          chain:
+            'borderland-trigger':
+              position: 'start'
+              component: 'Sitegeist\Borderland\Http\Component\UrlParameterTriggerHandlingComponent'
+        'process':
+          chain:
+            'borderland-dimension':
+              position: 'before routing'
+              component: 'Sitegeist\Borderland\Http\Component\TransparentDimensionComponent'
