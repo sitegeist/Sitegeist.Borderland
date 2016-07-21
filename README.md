@@ -72,6 +72,21 @@ Sitegeist:
 
 ## Installation
 
+Sitegeist.Borderland is not yet available via packagist. To install add the following to the composer.json.
+
+```
+{
+    "repositories": [{
+        "url": "ssh://git@git.sitegeist.de:40022/sitegeist/Sitegeist.Borderland.git",
+        "type": "vcs"
+    }],
+    "require": {
+        "sitegeist/borderland": "@dev"
+    }
+}
+
+```
+
 ~~Sitegeist.Borderland is available via packagist. Just add `"sitegeist/borderland" : "~1.0"` to the require-dev section of the composer.json or run `composer require --dev sitegeist/magicwand`. We use semantic-versioning so every breaking change will increase the major-version number.~~
 
 ## Contribution
