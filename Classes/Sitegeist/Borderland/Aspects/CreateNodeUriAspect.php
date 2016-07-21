@@ -48,10 +48,9 @@ class CreateNodeUriAspect
          */
         $node = $joinPoint->getMethodArgument('node');
 
-
         if ($node->getContext()->getWorkspaceName() !== 'live') {
             // only manipulate uris in live context
-            return $uri = $joinPoint->getAdviceChain()->proceed($joinPoint);
+            return $joinPoint->getAdviceChain()->proceed($joinPoint);
         }
 
         /**

@@ -16,7 +16,6 @@ Sitegeist:
     triggers: []
 
 #    triggers:
-#      # this triggers get activated via url paramerte
 #      urlParameter:
 #        '__parameter_name__':
 #          '__parameter_valuze_1__':
@@ -30,7 +29,6 @@ Sitegeist:
     # different groups can handle different presets or dimensions
     presetGroups: []
 
-#    # PresetGroups describe the different
 #    presetGroups:
 #      example:
 #        'foo':
