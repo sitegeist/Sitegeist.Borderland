@@ -7,12 +7,12 @@
     },
     "autoload": {
         "psr-0": {
-            "Sitegeist\\Bordeland": "Classes/"
+            "Sitegeist\\Borderland": "Classes/"
         }
     },
     "extra": {
         "neos": {
-            "package-key": "Sitegeist.Bordeland"
+            "package-key": "Sitegeist.Borderland"
         }
     }
 }
