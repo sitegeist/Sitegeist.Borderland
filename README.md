@@ -5,6 +5,12 @@ This package allows to define presets which can be activated via triggers (curre
 implemented) and stores the activated triggers a session cookie. Later on those stores presets are used transparently to 
 display the content in the assigned dimension without modifying the public url.
 
+This should be used with care and the following aspects have to be taken into account:
+
+* Delivering different contents for the same URL basically breaks external caches. (The internal neos caches work fine)
+* Seo aspects have to be taken serious. Search engine might not like what you do.  
+  
+
 ### Authors & Sponsors
 
 * Martin Ficzel - ficzel@sitegeist.de
@@ -86,6 +92,8 @@ Sitegeist.Borderland is not yet available via packagist. To install add the foll
 }
 
 ```
+
+Afterwards run `composer update`. 
 
 ~~Sitegeist.Borderland is available via packagist. Just add `"sitegeist/borderland" : "~1.0"` to the require-dev section of the composer.json or run `composer require --dev sitegeist/magicwand`. We use semantic-versioning so every breaking change will increase the major-version number.~~
 
