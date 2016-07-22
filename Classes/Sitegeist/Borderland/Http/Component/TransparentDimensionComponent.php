@@ -8,21 +8,16 @@ use TYPO3\Flow\Http\Component\ComponentInterface;
 use TYPO3\Flow\Utility\Arrays;
 
 use Sitegeist\Borderland\Service\UriMappingService;
+use Sitegeist\Borderland\Service\PresetService;
 
 class TransparentDimensionComponent implements ComponentInterface
 {
 
     /**
-     * @Flow\InjectConfiguration(path="cookie")
-     * @var array
+     * @Flow\Inject
+     * @var PresetService
      */
-    protected $cookie;
-
-    /**
-     * @Flow\InjectConfiguration(path="presetGroups")
-     * @var array
-     */
-    protected $presetGroups;
+    protected $presetService;
 
     /**
      * @Flow\Inject
@@ -43,22 +38,12 @@ class TransparentDimensionComponent implements ComponentInterface
             return;
         }
 
-        $cookie = $componentContext->getHttpRequest()->getCookie($this->cookie['name']);
-        $activePresets = NULL;
-        if ($cookie) {
-            $activePresets = (array)json_decode($cookie->getValue());
-        }
-
+        $activePresets = $this->presetService->getActivePresets();
         if (!$activePresets || is_array($activePresets) == false || count($activePresets) == 0) {
             return;
         }
 
-        $mappingConfiguration = [];
-        foreach ($activePresets as $group => $key) {
-            if (array_key_exists($group, $this->presetGroups)) {
-                $mappingConfiguration = Arrays::arrayMergeRecursiveOverrule($mappingConfiguration, $this->presetGroups[$group][$key]);
-            }
-        }
+        $mappingConfiguration = $this->presetService->getMergedPresetConfigurations($activePresets);
 
         if (count($mappingConfiguration) > 0) {
             $newPath = $this->uriMappingService->mapPathToDimension($requestPath, $mappingConfiguration);

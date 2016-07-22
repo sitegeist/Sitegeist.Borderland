@@ -25,6 +25,7 @@ shure that no contradictings settings are activated.
 ### UrlParameter Triggers
 
 This triggers are activated when a url with the given parameterPath (. seperated) and one of the defined values is called. 
+The parameter-value-patterns support regular expressions for the key and position keys to define the order of evaluation.
 
 ``` 
 Sitegeist:
@@ -32,12 +33,16 @@ Sitegeist:
     triggers:
       urlParameter:
         '__parameter_path__':
-          '__parameter_valuze_1__':
+          '__parameter_value_pattern_1__':
             group: example
             key: foo
-          '__parameter_valuze_2__':
+          '__parameter_value_pattern_2__':
             group: example
             key: bar
+          '.*':
+            position: end
+            group: example
+            key: ~            
 ```
 
 ## PresetGroups

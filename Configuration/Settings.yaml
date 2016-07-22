@@ -13,18 +13,24 @@ Sitegeist:
 
     # define the trigger to detect a presetKey and store the key in the session
     # presetKeys are grouped and only one key of a group can be active at once
+    # the parameter patterns support regular expressions for the key and position
+    # keys to define the order of evaluation
     triggers: []
 
 #    triggers:
 #      urlParameter:
 #        '__parameter_name__':
-#          '__parameter_valuze_1__':
+#          '__parameter_value_1__':
 #            group: example
 #            key: foo
-#          '__parameter_valuze_2__':
+#          '__parameter_value_2__':
 #            group: example
 #            key: bar
-#
+#          '.*':
+#            position: end
+#            group: example
+#            key: ~
+
     # groups of presets only one preset of each group can be active at a specific time but
     # different groups can handle different presets or dimensions
     presetGroups: []
