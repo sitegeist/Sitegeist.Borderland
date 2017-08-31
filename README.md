@@ -88,7 +88,7 @@ Sitegeist.Borderland is not yet available via packagist. To install add the foll
 ```
 {
     "repositories": [{
-        "url": "ssh://git@git.sitegeist.de:40022/sitegeist/Sitegeist.Borderland.git",
+        "url": "ssh://git@github.com:sitegeist/Sitegeist.Borderland.git",
         "type": "vcs"
     }],
     "require": {
